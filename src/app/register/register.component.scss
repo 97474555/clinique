@@ -1,0 +1,79 @@
+button {
+    width: 100%;
+    margin-top: 1rem;
+    background-color: #7197c0;
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .login-container {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url('background.jpg'); /* lien image */
+    background-size: cover;
+    background-position: center;
+  }
+  
+  .login-form {
+    background-color: rgba(255, 255, 255, 0.9); /* fond blanc légèrement transparent */
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    width: 100%;
+    max-width: 400px;
+  }
+  
+  .full-width {
+    width: 100%;
+    margin-bottom: 15px;
+  }
+  
+  /* Fond */
+  body, html {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .login-container {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-size: cover;
+    background-position: center;
+  }
+  
+  .login-form {
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.3);
+    width: 300px;
+    text-align: center; /* Centrer tout le texte */
+  }
+  
+  .full-width {
+    width: 100%;
+  }
+  
+  .logo-container {
+    margin-bottom: 10px;
+  }
+  
+  .logo {
+    width: 150px;  /* ✅ taille plus petite */
+    height: auto;
+  }
+  
+  .title {
+    margin: 10px 0 20px 0;
+    font-weight: bold;
+  }
+  

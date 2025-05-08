@@ -1,0 +1,131 @@
+/* Styles pour la navbar et le layout global */
+.app-container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+  }
+  
+  .app-header {
+    background-color: #0d3f42;
+    color: white;
+    padding: 0 24px;
+    box-shadow: 0 3px 5px -1px rgba(0,0,0,.2), 
+                0 6px 10px 0 rgba(0,0,0,.14), 
+                0 1px 18px 0 rgba(0,0,0,.12);
+    z-index: 2;
+  }
+  
+  .header-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 94px;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  .logo-container {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  
+  .logo {
+    height: 80px;
+    width: auto;
+  }
+  
+  .app-name {
+    font-size: 20px;
+    font-weight: 500;
+  }
+  
+  .logout-button {
+    color: white;
+    border-color: rgba(255, 255, 255, 0.5);
+    
+    .mat-icon {
+      margin-right: 8px;
+      font-size: 20px;
+    }
+  }
+  
+  .logout-button:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+  }
+  
+  /* Styles existants pour le booking container */
+  .booking-container {
+    flex: 1;
+    background-color: #f5f5f5;
+    padding: 24px;
+  }
+  
+  .booking-content {
+    max-width: 800px;
+    margin: 0 auto;
+    background: white;
+    padding: 32px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  }
+  
+  /* Reste des styles existants... */
+  .booking-title {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    color: #3f51b5;
+    margin-bottom: 32px;
+    font-weight: 500;
+    font-size: 28px;
+  }
+  
+  .booking-form {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+  }
+  
+  .full-width {
+    width: 100%;
+  }
+  
+  .coach-option {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  
+  .coach-avatar {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    object-fit: cover;
+  }
+  
+  .submit-button {
+    margin-top: 16px;
+    padding: 12px 24px;
+    font-size: 16px;
+    font-weight: 500;
+    
+    .mat-icon {
+      margin-right: 8px;
+    }
+  }
+  
+  /* Responsive adjustments */
+  @media (max-width: 768px) {
+    .header-content {
+      padding: 0 16px;
+    }
+    
+    .booking-content {
+      padding: 24px 16px;
+    }
+    
+    .booking-title {
+      font-size: 24px;
+    }
+  }

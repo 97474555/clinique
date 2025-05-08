@@ -1,0 +1,71 @@
+<app-sidenav></app-sidenav> 
+<div style="margin-left: 200px;"><!-- 🔥 Stats Cards -->
+<div fxLayout="row" fxLayoutAlign="space-evenly center" fxLayoutGap="20px" style="margin-top: 50px; flex-wrap: wrap;">
+  <mat-card class="dashboard-card" color="primary">
+    <mat-card-title>Coachs</mat-card-title>
+    <mat-card-subtitle>{{ nb_Coachs }}</mat-card-subtitle>
+  </mat-card>
+
+  <mat-card class="dashboard-card" color="accent">
+    <mat-card-title>Members</mat-card-title>
+    <mat-card-subtitle>{{ nb_Patients }}</mat-card-subtitle>
+  </mat-card>
+
+  <mat-card class="dashboard-card" color="warn">
+    <mat-card-title>Spéciality</mat-card-title>
+    <mat-card-subtitle>{{ nb_Speciality }}</mat-card-subtitle>
+  </mat-card>
+
+  <mat-card class="dashboard-card" color="primary">
+    <mat-card-title>Reservations</mat-card-title>
+    <mat-card-subtitle>{{ nb_Appointments }}</mat-card-subtitle>
+  </mat-card>
+</div>
+
+<!-- 🔥 Charts -->
+<div style="display: flex; flex-wrap: wrap; justify-content: center; margin-top: 50px; gap: 30px;">
+
+  <!-- Bar Chart -->
+  <mat-card style="width: 600px;">
+    <mat-card-header>
+      <mat-card-title>📊 Réservations par jour</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <canvas baseChart 
+              [data]="reservationChartData" 
+              [options]="chartOptions"
+              [type]="'bar'">
+      </canvas>
+    </mat-card-content>
+  </mat-card>
+
+  <!-- Pie Chart -->
+  <mat-card style="width: 400px;">
+    <mat-card-header>
+      <mat-card-title>🥧 Stats Coachs</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <canvas baseChart 
+              [data]="coachPieChartData" 
+              [options]="chartOptions"
+              [type]="'pie'">
+      </canvas>
+    </mat-card-content>
+  </mat-card>
+
+  <!-- Line Chart -->
+  <mat-card style="width: 600px;">
+    <mat-card-header>
+      <mat-card-title>📈 Réservations par mois</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <canvas baseChart 
+              [data]="lineChartData" 
+              [options]="chartOptions"
+              [type]="'line'">
+      </canvas>
+    </mat-card-content>
+  </mat-card>
+
+</div>
+</div>

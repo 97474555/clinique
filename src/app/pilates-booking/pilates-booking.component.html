@@ -1,0 +1,82 @@
+<div class="app-container">
+  <!-- Navbar -->
+  <header class="app-header">
+    <div class="header-content">
+      <div class="logo-container">
+        <img src="assets/logo.jpg" alt="Pilates App Logo" class="logo">
+        <span class="app-name">Elite Body Studio</span>
+      </div>
+      <button mat-stroked-button class="logout-button" (click)="logout()">
+        <mat-icon>logout</mat-icon>
+        Logout
+      </button>
+    </div>
+  </header>
+
+  <!-- Contenu principal -->
+  <div class="booking-container">
+    <div class="booking-content">
+      <h2 class="booking-title">
+        <mat-icon>calendar_today</mat-icon>
+        Book a Pilates Session
+      </h2>
+
+      <form (ngSubmit)="bookAppointment()" #appointmentForm="ngForm" class="booking-form">
+        <!-- Sélection Date -->
+        <mat-form-field appearance="outline" class="full-width">
+          <mat-label>Select Date</mat-label>
+          <input matInput 
+                [matDatepicker]="picker" 
+                name="date" 
+                [(ngModel)]="selectedDate" 
+                [min]="minDate"
+                required 
+                (dateChange)="checkAvailableCoachs()">
+          <mat-datepicker-toggle matSuffix [for]="picker">
+            <mat-icon matDatepickerToggleIcon>calendar_today</mat-icon>
+          </mat-datepicker-toggle>
+          <mat-datepicker #picker></mat-datepicker>
+          <mat-hint>Choose your preferred date</mat-hint>
+        </mat-form-field>
+
+        <!-- Sélection Heure -->
+        <mat-form-field appearance="outline" class="full-width">
+          <mat-label>Select Time</mat-label>
+          <input matInput 
+                type="time" 
+                name="time" 
+                [(ngModel)]="selectedTime" 
+                required 
+                (change)="checkAvailableCoachs()">
+          <mat-hint>Available slots: 9:00 - 20:00</mat-hint>
+        </mat-form-field>
+
+        <!-- Sélection Coach -->
+        <mat-form-field appearance="outline" class="full-width">
+          <mat-label>Select Coach</mat-label>
+          <mat-select name="coach" 
+                      [(ngModel)]="selectedCoach" 
+                      required>
+            <mat-option *ngFor="let coach of availableCoaches" [value]="coach.id">
+              <div class="coach-option">
+                <img [src]="coach.avatar" class="coach-avatar" alt="coach avatar">
+                {{ coach.firstName }} {{ coach.lastName }} - {{ coach.specialty }}
+              </div>
+            </mat-option>
+          </mat-select>
+          <mat-hint *ngIf="availableCoaches.length === 0">No available coaches for selected time</mat-hint>
+        </mat-form-field>
+
+        <!-- Bouton -->
+        <button mat-raised-button 
+                color="primary" 
+                type="submit" 
+                class="submit-button"
+                [disabled]="!appointmentForm.form.valid || availableCoaches.length === 0">
+          <mat-icon>book_online</mat-icon>
+          Book Appointment
+        </button>
+      </form>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,35 @@
+<div mat-dialog-title>
+    <h1>Speciality Form</h1>
+  </div>
+  
+  <form [formGroup]="sForm" (ngSubmit)="onFormSubmit()">
+    <div mat-dialog-content class="content">
+  
+      <!-- Name -->
+      <div class="row">
+        <mat-form-field appearance="outline" class="full-width">
+          <mat-label>Name</mat-label>
+          <input matInput type="text" placeholder="Ex. yoga" formControlName="name">
+        </mat-form-field>
+      </div>
+  
+      <!-- ✅ Image Upload -->
+      <div class="row">
+        <label>Upload Image:</label>
+        <br>
+        <input type="file" (change)="onFileSelected($event)" accept="image/*">
+      </div>
+  
+      <!-- ✅ Preview -->
+      <div class="row" *ngIf="previewUrl">
+        <p>Preview:</p>
+        <img [src]="previewUrl" alt="Image Preview" style="max-width: 100px; max-height: 100px;">
+      </div>
+  
+    </div>
+    <div mat-dialog-actions class="action">
+      <button mat-raised-button type="button" [mat-dialog-close]="false">Cancel</button>
+      <button mat-raised-button color="primary" type="submit">{{data ? 'Update' : 'Save'}}</button>
+    </div>
+  </form>
+  
